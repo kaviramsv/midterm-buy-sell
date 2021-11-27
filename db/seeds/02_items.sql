@@ -1,0 +1,1 @@
+INSERT INTO items (owner_id, category_id, name, description, price_in_cents, image_url, is_sold, time_stamp) VALUES (1,1, 'Thomas The Train', 'description', 1200, 'https://media.istockphoto.com/photos/thomas-the-tank-engine-picture-id530855825?b=1&k=20&m=530855825&s=170667a&w=0&h=srQxrdDZP73VpQa2ZEW5dY7Yk7zSA1grcBkJaQ5Sgdw=', false, '2021-09-20')
