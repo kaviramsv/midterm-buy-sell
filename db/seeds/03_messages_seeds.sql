@@ -1,0 +1,10 @@
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (1, 2, 4, 'Hi, is this available?');
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (2, 1, 4, 'Yes it is available');
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (1, 2, 4, 'When is a good time to pick it up');
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (2, 1, 4, 'Tomorrow evening works for me');
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (1, 3, 7, 'Hi, how is the condition?');
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (3, 1, 7, 'The condition is fair');
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (2, 3, 7, "Hi, I'm interested");
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (3, 2, 7, 'What time you can pick it?');
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (2, 1, 2, 'Hi, Is it in working condition');
+INSERT INTO (sender_id, recipient_id, item_id, message, send_time) VALUES (1, 2, 2, 'Yes it works');
