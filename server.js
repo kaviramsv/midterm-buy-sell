@@ -41,7 +41,39 @@ const itemsRoutes = require("./routes/items");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // app.use("/api/users", usersRoutes);
-app.use("/api/items", itemsRoutes);
+app.use("/items", itemsRoutes);
+
+//get and post for login
+// route: /login
+
+//get and post
+// route: /register
+
+//GET
+//route: /items/
+//              :id   VIEW PAGE
+//POST
+//route: /items/    SEARCH/FILTER
+//
+
+//GET and POST
+// route: /messages
+
+//GET and POST
+// route: /favourites
+
+//GET
+// route: /:user_id   my listings
+
+//Post
+//route: /:user_id/edit/:item_id
+//route: /:user_id/delete/:item_id
+
+//GET
+//route: /:user_id/create/  CREATE NEW LISTING PAGE
+//POST
+//route: /:user_id/create/
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
