@@ -9,10 +9,10 @@ const app = express();
 const morgan = require("morgan");
 
 // PG database client/connection setup
-const { Pool } = require("pg");
-const dbParams = require("./lib/db.js");
-const db = new Pool(dbParams);
-db.connect();
+// const { Pool } = require("pg");
+// const dbParams = require("./lib/db.js");
+// const db = new Pool(dbParams);
+// db.connect();
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -22,14 +22,14 @@ app.use(morgan("dev"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
-app.use(
-  "/styles",
-  sassMiddleware({
-    source: __dirname + "/styles",
-    destination: __dirname + "/public/styles",
-    isSass: false, // false => scss, true => sass
-  })
-);
+// app.use(
+//   "/styles",
+//   sassMiddleware({
+//     source: __dirname + "/styles",
+//     destination: __dirname + "/public/styles",
+//     isSass: false, // false => scss, true => sass
+//   })
+// );
 
 app.use(express.static("public"));
 
@@ -40,8 +40,8 @@ const itemsRoutes = require("./routes/items");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/api/users", usersRoutes(db));
-app.use("/api/items", itemsRoutes(db));
+// app.use("/api/users", usersRoutes);
+app.use("/api/items", itemsRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -53,5 +53,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+  console.log(`Toy Box listening on port ${PORT}`);
 });
