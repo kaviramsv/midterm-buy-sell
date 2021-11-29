@@ -1,13 +1,15 @@
 .sidenav {
-  width: 15rem;
+  padding:2em;
+
+  width: 20rem;
+  height:15rem;
   position: fixed;
   z-index: 1;
   top: 10rem;
   right: 8rem;
   color: #f9f9f9;
   background:#d9534f;
-  overflow-x: hidden;
-  padding: 8px 0;
+
 }
 
 .sidenav a {
@@ -52,6 +54,7 @@ margin:1rem;
   height:100%;
 }
 .right{
+padding-left: 1rem;
 height:12rem;
 width:50%;
 margin:1rem;
@@ -65,7 +68,21 @@ margin:1rem;
   transform-origin: 0 0; */
   transform: rotate(47deg);
 }
-.right .fa-star{
-margin-right:1em;
 
+
+.right .fa-star{
+margin-left:3rem;
+
+}
+.favourites{
+  width:1em;
+  color:red;
+  }
+#star {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }

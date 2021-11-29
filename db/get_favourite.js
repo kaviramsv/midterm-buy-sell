@@ -1,7 +1,7 @@
 const connectionToDB = require("./connection");
 
-const getFeaturedItems = (userId) => {
-  return connectionToDB.query(`SELECT * FROM items WHERE owner_id != $1;`,[userId])
+const getFavItems = (userId) => {
+  return connectionToDB.query(`SELECT DISTINCT item_id FROM favourites WHERE user_id = $1;`,[userId])
   .then((res) => {
     console.log("gfi:",res.rows);
     return res.rows;
@@ -9,5 +9,5 @@ const getFeaturedItems = (userId) => {
 };
 
 module.exports = {
-  getFeaturedItems,
+  getFavItems,
 };

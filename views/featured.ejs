@@ -25,10 +25,19 @@
   <div class="top">
 
     <div class="sidenav">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#clients">Clients</a>
-      <a href="#contact">Contact</a>
+      <form action="" method="POST">
+        <label for="categories">Category:</label>
+
+        <select name="categories" id="categories">
+          <option value="blocks">Blocks</option>
+          <option value="stuffed toys">Stuffed Toys</option>
+          <option value="vehicles">Vehicles</option>
+        </select>
+        <label for="max">Maximum</label>
+        <input type="text" id="max" name="max" ><br>
+        <label for="min">Minimum</label>
+        <input type="text" id="min" name="min" ><br><br>
+      </form>
     </div>
     <div class="item">
        <% for(let item in items) { %>
@@ -39,20 +48,30 @@
            </div>
            <div class="right">
             <br>
-            <h2>Name:<%= items[item].name %></h2>
-            <h4>Price:<%= items[item].price_in_cents %></h4>
+            <h4><%= items[item].name %></h4>
+            <h5>Price:  $<%= items[item].price_in_cents/100 %>.00</h5>
+            <p>hi<%=items[item].id%></p>
             <br>
             <span>
-              <button type="button" class="btn btn-danger btn-lg">  View  </button>
 
-              <i  class="fa fa-star" aria-hidden="true"></i>
+              <form action="/fav/<%=items[item].id%>/<%=user_id%>" method="POST">
+                <button type="button" class="btn btn-danger btn-lg">  View  </button>
+
+                <% if (fav_arr.includes(items[item].id)){ %>
+
+                  <button type="submit" id="star"> <i  class="fa fa-star fa-lg" style="color: yellow;" aria-hidden="true"></i></button>
+                 <% } else{ %>
+                <button type="submit" id="star"> <i  class="fa fa-star fa-lg" aria-hidden="true"></i></button>
+                <% } %>
+
+              </form>
+
             </span>
 
           </div>
           <div class="sold">
             <h2><STRONG>SOLD !!</STRONG></h2>
             <br>
-
           </div>
 
         </div>

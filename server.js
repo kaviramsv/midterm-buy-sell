@@ -27,10 +27,12 @@ app.use(express.static("public"));
 const itemsRoutes = require("./routes/items");
 const loginRoutes = require("./routes/login");
 const featuredRoutes = require("./routes/featured");
+const addtoFavouritesRoutes = require("./routes/fav");
 // Mount all resource routes
 app.use("/items", itemsRoutes);
 app.use("/login", loginRoutes);
 app.use("/featured",featuredRoutes);
+app.use("/fav",addtoFavouritesRoutes);
 
 //get and post for login
 // route: /login
