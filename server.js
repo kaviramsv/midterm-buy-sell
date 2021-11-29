@@ -15,9 +15,11 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 const itemsRoutes = require("./routes/items");
+const viewItemRoute = require("./routes/view_item");
 
 // Mount all resource routes
 app.use("/items", itemsRoutes);
+app.use("/view", viewItemRoute);
 
 //get and post for login
 // route: /login
@@ -59,6 +61,12 @@ app.use("/items", itemsRoutes);
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+app.get("/view", (req, res) => {
+  res.render("view_item");
+});
+
+
 
 app.listen(PORT, () => {
   console.log(`Toy Box listening on port ${PORT}`);

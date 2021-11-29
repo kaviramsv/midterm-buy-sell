@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Item</title>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/view_item.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+  <%- include('partials/_header') %>
+
+  <div class='image-item-container'>
+    <div>
+      <img class="image" src="https://media.istockphoto.com/photos/thomas-the-tank-engine-picture-id530855825?b=1&k=20&m=530855825&s=170667a&w=0&h=srQxrdDZP73VpQa2ZEW5dY7Yk7zSA1grcBkJaQ5Sgdw=" alt="Denim Jeans" style="width:100%">
+    </div>
+    <div class="item-details">
+      <h1>Name of Item</h1>
+    <p class="price">Price: $19.99</p>
+    <p>Some description about the item..</p>
+    <p>category</p>
+    <p>Owner name</p>
+    <p>Owner email</p>
+    <p>Owner phone number</p>
+    </div>
+  </div>
+
+  <form class="message-box" action="/messages/" method="post" id="messageForm">
+    <label for="message"><b>Message Me Here!</b></label>
+    <div>
+      <textarea class="text-area" name="message" id="message"></textarea>
+    </div>
+    <div>
+      <button type="submit" id="btnSend">Send Message</button>
+    </div>
+  </form>
+
+</body>
+</html>
