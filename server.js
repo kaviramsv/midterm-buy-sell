@@ -27,10 +27,14 @@ app.use(express.static("public"));
 const itemsRoutes = require("./routes/items");
 const loginRoutes = require("./routes/login");
 const featuredRoutes = require("./routes/featured");
+const messagesRoutes = require("./routes/messages");
+
 // Mount all resource routes
 app.use("/items", itemsRoutes);
 app.use("/login", loginRoutes);
 app.use("/featured",featuredRoutes);
+app.use("/messages", messagesRoutes);
+
 
 //get and post for login
 // route: /login
@@ -74,12 +78,6 @@ app.use("/featured",featuredRoutes);
 app.get("/", (req, res) => {
   res.render("index");
 });
-
-app.get("/view", (req, res) => {
-  res.render("view_item");
-});
-
-
 
 app.listen(PORT, () => {
   console.log(`Toy Box listening on port ${PORT}`);
