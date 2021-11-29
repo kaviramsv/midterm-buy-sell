@@ -29,7 +29,6 @@ const loginRoutes = require("./routes/login");
 const featuredRoutes = require("./routes/featured");
 // Mount all resource routes
 app.use("/items", itemsRoutes);
-app.use("/view", viewItemRoute);
 app.use("/login", loginRoutes);
 app.use("/featured",featuredRoutes);
 
