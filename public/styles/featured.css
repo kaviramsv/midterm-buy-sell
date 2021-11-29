@@ -1,0 +1,71 @@
+.sidenav {
+  width: 15rem;
+  position: fixed;
+  z-index: 1;
+  top: 10rem;
+  right: 8rem;
+  color: #f9f9f9;
+  background:#d9534f;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f9f9f9;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.item{
+
+  margin:10rem;
+  width:60%;
+}
+.sub-item{
+  margin: 4rem;
+  border: 10px solid grey;
+  height: 20rem;
+  background-color: darkgrey;
+  display:flex;
+  padding :2rem;
+  justify-content: space-between;
+}
+.left{
+height: 12rem;
+width:30%;
+margin:1rem;
+}
+
+.left img {
+  width:100%;
+  height:100%;
+}
+.right{
+height:12rem;
+width:50%;
+margin:1rem;
+}
+.sold {
+  margin-top:1.5em;
+  width:20%;
+  height:40%;
+  color: orangered;
+  /* text-orientation: ;
+  transform-origin: 0 0; */
+  transform: rotate(47deg);
+}
+.right .fa-star{
+margin-right:1em;
+
+}
