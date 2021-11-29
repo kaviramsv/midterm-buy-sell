@@ -1,11 +1,29 @@
 const connectionToDB = require("./connection");
 
-const getItems = () => {
+const getAllItems = () => {
   return connectionToDB.query(`SELECT * from items;`).then((res) => {
     return res.rows;
   });
 };
 
+const getItemsByUser = (id) => {
+  return connectionToDB
+    .query(
+      `SELECT image_url, items.name, price_in_cents, items.description
+    FROM items
+    JOIN users ON users.id = owner_id
+    WHERE owner_id = $1;`,
+      [id]
+    )
+    .then((res) => {
+      return res.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
 module.exports = {
-  getItems,
+  getAllItems,
+  getItemsByUser,
 };

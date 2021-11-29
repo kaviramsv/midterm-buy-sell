@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+
+  <!-- Client Side JS -->
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <!-- Bootstrap CSS and Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/styles/my-items.css" type="text/css">
+
+  <title>Toy-Box - My Listings</title>
+</head>
+<body>
+  <header>
+    <%- include('partials/_header') %>
+  </header>
+
+  <% for(let item of items) { %>
+    <section class="item-card">
+      <div class = icon-section>
+        <button class="icon-button">
+          <i class="fas fa-edit fa-lg item-icons"></i>
+        </button>
+        <button class="icon-button">
+          <i class="fas fa-trash-alt fa-lg item-icons"></i>
+        </button>
+      </div>
+      <div class= container>
+        <div class="image-section">
+          <img class="item-image" src= "<%= item.image_url %>" alt="">
+        </div>
+        <div class="item-content">
+          <h2 class="item-name"><%= item.name %></h2>
+          <h3 class="item-price"><%= item.price_in_cents %></h3>
+          <div class="item-description">
+            <p>Description: </p>
+            <p><%= item.description %></p>
+          </div>
+        </div>
+      </div>
+      <div class="sold-section">
+        <button class="btn btn-danger">Mark as Sold</button>
+      </div>
+    </section>
+  <% } %>
+
+
+
+
+
+
+ <!-- Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
