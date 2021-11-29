@@ -10,7 +10,7 @@ router.get("/:id", (req, res) => {
     .getFavItemsByUser(req.params.id)
     .then((items) => {
       const templateVars = {
-        favItems: items,
+        items: items,
       };
       res.render("favourites", templateVars);
     })
