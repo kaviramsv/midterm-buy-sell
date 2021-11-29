@@ -1,37 +1,22 @@
-/*
- * All routes for Widgets are defined here
- * Since this file is loaded in server.js into api/widgets,
- *   these routes are mounted onto /widgets
- * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
- */
-
+//Require Express as Middleware
 const express = require("express");
 const router = express.Router();
+
+//Call item-query to use as functions
 const itemFnc = require("../db/item-query");
 
-router.get("/", (req, res) => {
-  itemFnc.getItems().then((items) => {
-    res.json(items);
-
-
-
+router.get("/user/:id", (req, res) => {
+  itemFnc.getItemsByUser(req.params.id).then((items) => {
+    const templateVars = {
+      items: items,
+    };
+    console.log(templateVars);
+    res.render("my-items", templateVars);
   });
 });
 
-module.exports = router;
+router.get("/", (req, res) => {
+  res.render("my-items");
+});
 
-// module.exports = (db) => {
-//   router.get("/", (req, res) => {
-//     let query = `SELECT * FROM items`;
-//     console.log(query);
-//     db.query(query)
-//       .then((data) => {
-//         const items = data.rows;
-//         res.json({ items });
-//       })
-//       .catch((err) => {
-//         res.status(500).json({ error: err.message });
-//       });
-//   });
-//   return router;
-// };
+module.exports = router;
