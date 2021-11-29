@@ -26,12 +26,14 @@ const itemsRoutes = require("./routes/items");
 const loginRoutes = require("./routes/login");
 const featuredRoutes = require("./routes/featured");
 const favouriteRoutes = require("./routes/favourties");
+const messagesRoutes = require("./routes/messages");
 
 // Mount all resource routes
 app.use("/items", itemsRoutes);
 app.use("/login", loginRoutes);
 app.use("/featured", featuredRoutes);
 app.use("/favourites", favouriteRoutes);
+app.use("/messages", messagesRoutes);
 
 //get and post for login
 // route: /login
