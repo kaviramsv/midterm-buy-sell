@@ -7,8 +7,6 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
-
-
 // PG database client/connection setup
 // const { Pool } = require("pg");
 // const dbParams = require("./lib/db.js");
@@ -27,15 +25,16 @@ app.use(express.static("public"));
 const itemsRoutes = require("./routes/items");
 const loginRoutes = require("./routes/login");
 const featuredRoutes = require("./routes/featured");
+const favouriteRoutes = require("./routes/favourties");
+
 // Mount all resource routes
 app.use("/items", itemsRoutes);
 app.use("/login", loginRoutes);
-app.use("/featured",featuredRoutes);
+app.use("/featured", featuredRoutes);
+app.use("/favourites", favouriteRoutes);
 
 //get and post for login
 // route: /login
-
-
 
 //get and post
 // route: /register
