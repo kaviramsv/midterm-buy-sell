@@ -12,6 +12,9 @@ const itemFnc = require("../db/item-query");
 router.get("/", (req, res) => {
   itemFnc.getItems().then((items) => {
     res.json(items);
+
+
+
   });
 });
 
