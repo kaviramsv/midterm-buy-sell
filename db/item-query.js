@@ -23,7 +23,27 @@ const getItemsByUser = (id) => {
     });
 };
 
+const getFavItemsByUser = (id) => {
+  return connectionToDB
+    .query(
+      `SELECT image_url, items.name, price_in_cents, items.description
+      FROM favourites
+      JOIN users ON users.id = user_id
+      JOIN items ON items.id = item_id
+      WHERE user_id = $1;
+      `,
+      [id]
+    )
+    .then((res) => {
+      return res.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
 module.exports = {
   getAllItems,
   getItemsByUser,
+  getFavItemsByUser,
 };

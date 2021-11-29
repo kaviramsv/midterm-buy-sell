@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Item</title>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/view_items.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+  <%- include('partials/_header') %>
+
+  <div class='image-item-container'>
+    <div>
+      <img class="image" src="<%= item.image_url %>" alt="Denim Jeans" style="width:100%">
+    </div>
+    <div class="item-details">
+      <h1><%= item.name %></h1>
+    <p class="price">Price: <%= item.price_in_cents %></p>
+    <p>Description: <%= item.description %></p>
+    <p><%= item.category_name %></p>
+    <p><%= item.owner_name %></p>
+    <p><%= item.owner_email %></p>
+    <p><%= item.owner_phone %></p>
+    </div>
+  </div>
+
+  <form class="message-box" action="/messages/new" method="post" id="messageForm">
+    <label for="message"><b>Message Me Here!</b></label>
+    <div>
+      <textarea class="text-area" name="message" id="message"></textarea>
+    </div>
+    <div>
+      <button type="submit" id="btnSend">Send Message</button>
+    </div>
+  </form>
+
+</body>
+</html>
