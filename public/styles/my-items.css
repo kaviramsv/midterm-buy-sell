@@ -1,0 +1,59 @@
+.item-card {
+  height: 350px;
+  margin: 25px auto;
+  width: 80%;
+  background: rgb(66, 65, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(66, 65, 83, 1) 6%,
+    rgba(77, 88, 98, 1) 48%,
+    rgba(81, 97, 98, 1) 78%
+  );
+  border-radius: 5%;
+}
+
+/* icon secion */
+.icon-section {
+  display: flex;
+  justify-content: flex-end;
+}
+.icon-button {
+  padding: 0;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: gray;
+  cursor: pointer;
+}
+.icon-section .icon-button i:hover {
+  color: red;
+}
+.item-icons {
+  color: white;
+  padding: 15px;
+}
+/* item details  */
+.container {
+  display: flex;
+  margin-top: 10px;
+}
+/* image section  */
+.item-image {
+  height: 200px;
+}
+/* item text  */
+.item-content {
+  color: white;
+  margin-left: 20px;
+}
+.item-price {
+  text-align: right;
+}
+/* sold section  */
+.sold-section {
+  display: flex;
+  justify-content: flex-end;
+}
+.sold-section button {
+  margin-right: 25%;
+}
