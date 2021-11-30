@@ -43,6 +43,7 @@
 
 .text-area {
   width: 50rem;
+  height: 2rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -65,4 +66,58 @@
   margin-right: 15rem;
   margin-bottom: 5rem;
   flex-grow: 3;
+}
+
+.create-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(10, 10, 10);
+  border-radius: 25px;
+  background: #434440b6;
+  width: 75rem;
+  height: 20rem;
+  margin-left: 10rem;
+  margin-top: 10rem;
+  margin-right: 15rem;
+  margin-bottom: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-content: center;
+}
+
+.label {
+  align-items: center;
+}
+
+.price {
+  width: 20rem;
+  height: 2rem;
+  margin-left: 1rem;
+  margin-right: 10rem;
+  padding-right: 5rem;
+} 
+
+select {
+  width: 15rem;
+  height: 2rem;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.button {
+  float: right;
+}
+
+.button:hover {
+  background-color: #abc257;
 }
