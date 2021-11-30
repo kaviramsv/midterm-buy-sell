@@ -24,7 +24,7 @@
 
   <div class='image-item-container'>
     <div>
-      <img class="image" src="<%= item.image_url %>" alt="Denim Jeans" style="width:100%">
+      <img class="image" src="<%= item.image_url %>" style="width:100%">
     </div>
     <div class="item-details">
       <h1><%= item.name %></h1>
@@ -43,7 +43,7 @@
       <textarea class="text-area" name="message" id="message"></textarea>
     </div>
     <div>
-      <button type="submit" id="btnSend">Send Message</button>
+      <button class="btn btn-danger" type="submit" id="btnSend"><strong>Send Message</strong></button>
     </div>
   </form>
 
