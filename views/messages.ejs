@@ -30,26 +30,36 @@
   <section class="messages">
     <div class="inbox-container">
       <div class="item-details">
-        <img src="" alt="">
-        <h2>Item Name</h2>
-        <p>Price</p>
-        <p>Seller: name</p>
+        <p>Lego Star Wars: TIE Fighter</p>
+        <div>
+          <p>$50.00</p>
+          <p>bob</p>
+        </div>
       </div>
     </div>
     <div class="message-container">
+      <div class="message-title">
+        <p>LEGO STAR WARS: TIE FIGHTER</p>
+        <p>item name: Bob</p>
+      </div>
       <div class="message-history">
-        <div class="message-text">
+        <div class="message-text sender">
           <p>hi im interested in the product</p>
           <p>Sent at: 2021-11-29 8:50pm </p>
         </div>
+        <div class="message-text recipient">
+          <p>hello is the listed price at 50 okay?</p>
+          <p>Sent at: 2021-11-29 9:50pm </p>
+        </div>
       </div>
-      <form action="">
-        <label for="message">
-          Message:
-        </label>
-        <textarea name="message" id="message-body" cols="50" rows="2"></textarea>
-        <button class="btn btn-primary" type="submit">Send</button>
-      </form>
+      <div class="message-form">
+        <form action="">
+          <textarea name="message" placeholder="Type Message Here" id="message-body" cols="50" rows="2"></textarea>
+        </form>
+        <div class="send-button">
+          <button class="btn btn-primary" type="submit">Send</button>
+        </div>
+      </div>
     </div>
   </section>
 

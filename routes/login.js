@@ -21,14 +21,3 @@ router.post("/", (req, res) => {
   });
 });
 module.exports = router;
-
-// getItems.getFeaturedItems(user.id).then((items) => {
-
-//   const templateVars = { items: items, user: user };
-//   res.render("featured", templateVars);
-
-// }).catch(err => {
-//   res
-//     .status(500)
-//     .json({ error: err.message });
-// });

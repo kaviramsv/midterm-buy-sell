@@ -9,4 +9,75 @@ section.messages {
   width: 70%;
   margin: 0 20px;
   height: 900px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.inbox-container {
+  background-color: grey;
+  width: 20%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.item-details {
+  background-color: forestgreen;
+  margin: 1em;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-history {
+  background-color: white;
+  height: 70%;
+  margin: 0 35px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.message-title {
+  background-color: forestgreen;
+  margin: 0 auto;
+  padding: 0 50px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message-text {
+  border-radius: 5px;
+  margin: 20px 30px;
+}
+.message-text.recipient {
+  background-color: lightslategrey;
+  margin-right: auto;
+}
+
+.message-text.sender {
+  background-color: deepskyblue;
+  margin-left: auto;
+}
+
+.message-form {
+  background-color: antiquewhite;
+  margin: 0 30px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+form {
+  margin: 20px;
+  border: none;
+}
+textarea#message-body {
+  border: none;
+  border-radius: 5px;
+}
+.send-button {
+  margin-right: 25px;
 }
