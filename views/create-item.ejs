@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Item</title>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/create_items.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/view_items.css" type="text/css" />
+
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+  <%- include('partials/_header') %>
+
+  <div class='create-item-container'>
+    <form action="/messages/new" method="post" id="messageForm">
+      <div>
+        <label for="toy-name"><b>Name</b></label>
+        <textarea class="text-area" name="toy-name" id="toy-name"></textarea>
+      </div>
+      <div>
+        <label for="description"><b>Description</b></label>
+        <textarea class="text-area" name="description" id="description"></textarea>
+      </div>
+      <div>
+        <label for="image-url"><b>image-url</b></label>
+        <textarea class="text-area" name="image-url" id="image-url"></textarea>
+      </div>
+      <div>
+        <label for="price"><b>Price</b></label>
+        <textarea class="text-area" name="price" id="price"></textarea>
+      </div>
+      <div >
+        <label for="category"><strong>Select Category</strong></label>
+        <select id="category" name="category">
+          <option value="vehicles">Vehicles</option>
+          <option value="stuffed">Stuffed</option>
+          <option value="blocks">Blocks</option>
+          </select>
+      </div>
+      <div>
+        <button class="button btn btn-danger" type="submit" id="btnSend"><strong>Submit Listing</strong></button>
+      </div>
+      
+    </form>
+  </div>
+
+  
+
+</body>
+</html>
