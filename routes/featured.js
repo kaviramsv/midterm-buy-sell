@@ -9,6 +9,8 @@ router.get("/:id", (req, res) => {
   const user = req.session.user_id;
   console.log("featured,",user)
   const user_id = req.params.id;
+
+
   //items for user except his own id
   getFav.getFavItems(user_id)
   .then((fav_items)=>{
@@ -23,6 +25,9 @@ router.get("/:id", (req, res) => {
       }
       console.log("items",items)
     console.log(fav_arr);
+    if(items.length===0){
+      res.send("<h2>no match found</h2>");
+    }
     const templateVars = {user_id:user_id, items: items,fav_arr:fav_arr};
     res.render("featured",templateVars);
      })
