@@ -25,9 +25,8 @@
   <div class="top">
 
     <div class="sidenav">
-      <form action="" method="POST">
+      <form action="/search" method="POST">
         <label for="categories">Category:</label>
-
         <select name="categories" id="categories">
           <option value="blocks">Blocks</option>
           <option value="stuffed toys">Stuffed Toys</option>
@@ -50,32 +49,35 @@
             <br>
             <h4><%= items[item].name %></h4>
             <h5>Price:  $<%= items[item].price_in_cents/100 %>.00</h5>
-            <p>hi<%=items[item].id%></p>
             <br>
-            <span>
+            <br>
 
-              <form action="/fav/<%=items[item].id%>/<%=user_id%>" method="POST">
-                <button type="button" class="btn btn-danger btn-lg">  View  </button>
 
                 <% if (fav_arr.includes(items[item].id)){ %>
 
+                  <form action="/fav/<%=items[item].id%>/<%=user_id%>/true" method="POST">
+                  <span>
+                  <button type="button" class="btn btn-danger btn-lg">  View  </button>
                   <button type="submit" id="star"> <i  class="fa fa-star fa-lg" style="color: yellow;" aria-hidden="true"></i></button>
-                 <% } else{ %>
-                <button type="submit" id="star"> <i  class="fa fa-star fa-lg" aria-hidden="true"></i></button>
+                </span>
+                  <% }else{ %>
+
+                  <form action="/fav/<%=items[item].id%>/<%=user_id%>/false" method="POST">
+                  <span>
+                  <button type="button" class="btn btn-danger btn-lg">  View  </button>
+                  <button type="submit" id="star"> <i  class="fa fa-star fa-lg" aria-hidden="true"></i></button>
+                  </span>
                 <% } %>
 
-              </form>
-
-            </span>
-
+                 </form>
           </div>
           <div class="sold">
-            <h2><STRONG>SOLD !!</STRONG></h2>
-            <br>
-          </div>
-
+          <% if  (items[item].is_sold ) {%>
+            <h2><STRONG>SOLD !!</STRONG></h2>           <br>
+          <% } %>
         </div>
-         <% } %>
+        </div>
+       <% } %>
     </div>
 
   </div>
