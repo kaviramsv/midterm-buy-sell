@@ -1,6 +1,6 @@
 const connectionToDB = require("./connection");
 
-const getSenderMessages = () => {
+const getSenderMessages = (id) => {
   return connectionToDB
     .query(
       `SELECT *
