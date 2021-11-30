@@ -42,8 +42,25 @@ const getFavItemsByUser = (id) => {
     });
 };
 
+const getItemById = (id) => {
+  return connectionToDB
+    .query(
+      `
+  SELECT items.name, price_in_cents, users.name
+  FROM items
+  JOIN users ON users.id = owner_id
+  WHERE items.id = $1;
+  `,
+      [id]
+    )
+    .then((res) => {
+      return res.rows[0];
+    });
+};
+
 module.exports = {
   getAllItems,
   getItemsByUser,
   getFavItemsByUser,
+  getItemById,
 };

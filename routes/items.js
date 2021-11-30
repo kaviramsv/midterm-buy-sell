@@ -5,7 +5,7 @@ const router = express.Router();
 //Call item-query to use as functions
 const itemFnc = require("../db/item-query");
 const viewItemFnc = require("../db/view_item-query");
-const createNewItem = require("../db/create-new-item")
+// const createNewItem = require("../db/create-new-item")
 
 router.get("/admin/:id", (req, res) => {
   itemFnc.getItemsByUser(req.params.id).then((items) => {
@@ -17,7 +17,6 @@ router.get("/admin/:id", (req, res) => {
 });
 
 router.get("/new", (req, res) => {
-  
   res.render("create-item");
 });
 

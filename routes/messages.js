@@ -1,10 +1,24 @@
 //Require express as middleware
 const express = require("express");
 const router = express.Router();
+const messageQuery = require("../db/messages-query");
+const itemQuery = require("../db/item-query");
 const newMessage = require("../db/add_message-query");
 
-router.get("/", (req, res) => {
-  res.render("messages");
+router.get("/:itemID/:user1ID/:user2ID", (req, res) => {
+  const itemID = req.params.itemID;
+  const user1ID = req.params.user1ID;
+  const user2ID = req.params.user2ID;
+
+  messageQuery
+    .getMessageHistory(itemID, user1ID, user2ID)
+    .then((conversation) => {
+      itemQuery.getItemById(itemID).then((item) => {
+        const templateVars = { conversation, user1ID, item };
+        console.log(templateVars);
+        res.render("messages", templateVars);
+      });
+    });
 });
 
 router.post("/new", (req, res) => {
