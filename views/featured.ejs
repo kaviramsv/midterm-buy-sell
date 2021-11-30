@@ -26,18 +26,21 @@
 
     <div class="sidenav">
       <form action="/search/<%=user_id%>" method="POST">
-        <label for="categories">Category:</label>
+        <label for="categories">Category </label>
+
         <select name="categories" id="categories">
+          <option value=4>None</option>
           <option value=3>Blocks</option>
           <option value=2>Stuffed Toys</option>
           <option value=1>Vehicles</option>
         </select>
+        <br>
         <label for="max">Maximum</label>
         <input type="text" id="max" name="max" ><br>
         <label for="min">Minimum</label>
         <input type="text" id="min" name="min" ><br><br>
 
-        <button type="submit">Search</button>
+        <button type="submit" class="btn btn-outline-light btn-block" >  <i class="fas fa-search"></i>  Search  </button>
       </form>
     </div>
     <div class="item">

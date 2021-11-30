@@ -1,14 +1,30 @@
 const connectionToDB = require("./connection");
 
-const searchItems = (user_id,max,min,category_id) => {
-  return connectionToDB.query(
-    `SELECT * FROM items WHERE owner_id != $1 AND category_id=$4 AND price_in_cents >= $3 AND price_in_cents <= $2`,
-
-    [user_id,max,min,category_id ])
+const searchItems = (user_id,category_id,max,min) => {
+  const queryParams = [];
+  let queryString = `SELECT * FROM items WHERE 1=1 `;
+  if (user_id) {
+    queryParams.push(`${user_id}`);
+    queryString += ` AND owner_id !=  $${queryParams.length}`;
+  }
+  if (category_id) {
+    queryParams.push(`${category_id}`);
+    queryString += ` AND category_id=  $${queryParams.length}`;
+  }
+  if (max) {
+    queryParams.push(`${max}`);
+    queryString += ` AND price_in_cents <= $${queryParams.length}`;
+  }
+  if (min) {
+    queryParams.push(`${min}`);
+    queryString += ` AND price_in_cents >= $${queryParams.length}`;
+  }
+  return connectionToDB.query(queryString, queryParams)
   .then((res) => {
-    return res.rows;
-  });
-};
+        return res.rows;
+      });
+    };
+
 
 module.exports = {
   searchItems,

@@ -10,12 +10,16 @@ router.post("/:id", (req, res) => {
   const category_id = req.body.categories;
   const user_id = req.params.id;
 
+//if optionvalue==none(category_id=4)
+  if(category_id==4){
+    res.redirect(`/featured/${user_id}`);
+  }
 
    console.log("search",search)
    getFav.getFavItems(user_id)
   .then((fav_items)=>{
       const fav= fav_items;
-    search.searchItems(user_id,max,min,category_id)
+    search.searchItems(user_id,category_id,max,min)
     .then((items) => {
       let fav_arr=[];
       for(let obj of fav){

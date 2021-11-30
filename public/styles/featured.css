@@ -1,15 +1,15 @@
 .sidenav {
-  padding:2em;
-
+  padding:4rem;
+  padding-right: 5rem;
   width: 20rem;
-  height:15rem;
+  height:22rem;
   position: fixed;
   z-index: 1;
   top: 10rem;
   right: 8rem;
   color: #f9f9f9;
   background:#d9534f;
-
+  border-radius: 25px;
 }
 
 .sidenav a {
@@ -32,6 +32,7 @@
 .item{
 
   margin:10rem;
+  margin-right:8rem;
   width:55%;
 }
 .sub-item{
@@ -41,7 +42,8 @@
   background-color: darkgrey;
   display:flex;
   padding :2rem;
-  justify-content: space-between;
+  justify-content: space-between;border-radius: 25px;
+
 }
 .left{
 height: 12rem;
