@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const userFnc = require("../db/get-user");
 const getItems = require("../db/get-featured-items");
-
+const cookieSession = require('cookie-session');
 router.get("/", (req, res) => {
 
   res.render("login.ejs");
@@ -10,10 +10,11 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const form_email = req.body.email;
-  userFnc.getUser(form_email).then((user) => {
-   console.log("redirecting to featured");
 
-    res.redirect(`/featured/${user.id}`);
+  userFnc.getUser(form_email).then((user) => {
+
+  req.session.user_id = user.id;
+  res.redirect(`/featured/${user.id}`);
   }).catch(err => {
     res
       .status(500)

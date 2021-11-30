@@ -5,6 +5,9 @@ const getItems = require("../db/get-featured-items");
 const getFav = require("../db/get_favourite");
 
 router.get("/:id", (req, res) => {
+
+  const user = req.session.user_id;
+  console.log("featured,",user)
   const user_id = req.params.id;
   //items for user except his own id
   getFav.getFavItems(user_id)

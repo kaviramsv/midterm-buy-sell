@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 8080;
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-
+const cookieSession = require('cookie-session');
 // PG database client/connection setup
 // const { Pool } = require("pg");
 // const dbParams = require("./lib/db.js");
@@ -20,7 +20,10 @@ app.use(morgan("dev"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}))
 // Separated Routes for each Resource
 const itemsRoutes = require("./routes/items");
 const loginRoutes = require("./routes/login");
