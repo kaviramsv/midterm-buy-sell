@@ -17,7 +17,10 @@ router.get("/admin/:id", (req, res) => {
 });
 
 router.get("/new", (req, res) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature/messages
   res.render("create-item");
 });
 
