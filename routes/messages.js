@@ -7,12 +7,21 @@ const newMessage = require("../db/add_message-query");
 
 router.get("/", (req, res) => {
   const user_id = req.session.user_id;
-  const templateVars = {
-    user_id,
-    conversation: [],
-    item: [],
-  };
-  res.render("messages", templateVars);
+
+  messageQuery
+    .getItemInbox(user_id)
+    .then((inbox) => {
+      const templateVars = {
+        user_id,
+        conversation: [],
+        item: [],
+        itemInbox: inbox,
+      };
+      res.render("messages", templateVars);
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
 });
 
 router.get("/:itemID/:user2ID", (req, res) => {
@@ -20,15 +29,53 @@ router.get("/:itemID/:user2ID", (req, res) => {
   const user_id = req.session.user_id;
   const user2ID = req.params.user2ID;
 
-  messageQuery
+  // messageQuery
+  //   .getMessageHistory(itemID, user_id, user2ID)
+  //   .then((conversation) => {
+  //     itemQuery.getItemById(itemID).then((item) => {
+  //       const templateVars = { conversation, user_id, item };
+  //       console.log(templateVars);
+  //       res.render("messages", templateVars);
+  //     });
+  //   });
+
+  const conversation = messageQuery
     .getMessageHistory(itemID, user_id, user2ID)
     .then((conversation) => {
-      itemQuery.getItemById(itemID).then((item) => {
-        const templateVars = { conversation, user_id, item };
-        console.log(templateVars);
-        res.render("messages", templateVars);
-      });
+      return conversation;
+    })
+    .catch((err) => {
+      console.log(err.message);
     });
+
+  const itemDetails = itemQuery
+    .getItemById(itemID)
+    .then((item) => {
+      return item;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+
+  const itemInbox = messageQuery
+    .getItemInbox(user_id)
+    .then((inbox) => {
+      return inbox;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+
+  Promise.all([conversation, itemDetails, itemInbox]).then((values) => {
+    const templateVars = {
+      user_id,
+      conversation: values[0],
+      item: values[1],
+      itemInbox: values[2],
+    };
+    console.log(templateVars);
+    res.render("messages", templateVars);
+  });
 });
 
 //send message from view item page

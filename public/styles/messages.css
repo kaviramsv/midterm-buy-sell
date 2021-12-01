@@ -39,7 +39,7 @@ section.messages {
 }
 
 .message-title {
-  background-color: forestgreen;
+  /* backgroundcolor: rgb(107, 141, 107); */
   margin: 0 auto;
   padding: 0 50px;
   border-radius: 5px;
@@ -73,10 +73,14 @@ section.messages {
 form {
   margin: 20px;
   border: none;
+  width: 100%;
 }
-textarea#message-body {
+
+form textarea {
+  width: 100%;
   border: none;
-  border-radius: 5px;
+  border-bottom: solid grey 3px;
+  margin-bottom: 0.5em;
 }
 .send-button {
   margin-right: 25px;
