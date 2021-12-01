@@ -44,9 +44,11 @@ router.post("/new", (req, res) => {
 
 router.get("/:id", (req, res) => {
   console.log(req.params.id);
+  const user_id = req.session.user_id;
   viewItemFnc.getItemById(req.params.id).then((item) => {
     const templateVars = {
-      item: item,
+      item,
+      user_id,
     };
     // console.log(templateVars);
     res.render("items_show", templateVars);
