@@ -25,10 +25,10 @@
   <%- include('partials/_header') %>
 
   <div class='create-item-container'>
-    <form action="/messages/new" method="post" id="messageForm">
+    <form action="/items/new" method="post" id="create-item">
       <div>
         <label for="toy-name"><b>Name</b></label>
-        <textarea class="text-area" name="toy-name" id="toy-name"></textarea>
+        <textarea class="text-area" name="toy_name" id="toy_name"></textarea>
       </div>
       <div>
         <label for="description"><b>Description</b></label>
@@ -36,7 +36,7 @@
       </div>
       <div>
         <label for="image-url"><b>image-url</b></label>
-        <textarea class="text-area" name="image-url" id="image-url"></textarea>
+        <textarea class="text-area" name="image_url" id="image_url"></textarea>
       </div>
       <div>
         <label for="price"><b>Price</b></label>
@@ -44,14 +44,14 @@
       </div>
       <div >
         <label for="category"><strong>Select Category</strong></label>
-        <select id="category" name="category">
-          <option value="vehicles">Vehicles</option>
-          <option value="stuffed">Stuffed</option>
-          <option value="blocks">Blocks</option>
+        <select id="category_id" name="category_id">
+          <option value="1">Vehicles</option>
+          <option value="2">Stuffed</option>
+          <option value="3">Blocks</option>
           </select>
       </div>
       <div>
-        <button class="button btn btn-danger" type="submit" id="btnSend"><strong>Submit Listing</strong></button>
+        <button class="button btn btn-danger" type="submit" id="create-item"><strong>Submit Listing</strong></button>
       </div>
       
     </form>
