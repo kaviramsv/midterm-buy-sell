@@ -29,7 +29,7 @@ router.post("/new", (req, res) => {
   const message = req.body.message; //get message from form;
 
   newMessage
-    .addMessage(sender_id, reciever_id, item_id, message)
+    .addMessage(sender_id, item_id, reciever_id, message)
     .then((res) => {
       // console.log("reciever id", reciever_id);
       //console.log("sender id", sender_id);
@@ -39,7 +39,7 @@ router.post("/new", (req, res) => {
       };
       console.log(templateVars);
     });
-  res.redirect("/messages");
+  res.redirect(`/messages/${item_id}/${reciever_id}`);
 });
 
 module.exports = router;

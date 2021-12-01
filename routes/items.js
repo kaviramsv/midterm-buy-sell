@@ -21,7 +21,11 @@ router.get("/admin", (req, res) => {
 });
 
 router.get("/new", (req, res) => {
-  res.render("create-item");
+  const user_id = req.session.user_id;
+  const templateVars = {
+    user_id,
+  };
+  res.render("create-item", templateVars);
 });
 
 router.post("/new", (req, res) => {
@@ -39,7 +43,7 @@ router.post("/new", (req, res) => {
     console.log(templateVars);
     //res.render("items_show", templateVars);
   });
-  //res.redirect("/admin/:id");
+  res.redirect("/items/admin");
 });
 
 
