@@ -7,20 +7,18 @@ const itemFnc = require("../db/item-query");
 const viewItemFnc = require("../db/view_item-query");
 // const createNewItem = require("../db/create-new-item")
 
-router.get("/admin/:id", (req, res) => {
-  itemFnc.getItemsByUser(req.params.id).then((items) => {
+router.get("/admin", (req, res) => {
+  const user_id = req.session.user_id;
+  itemFnc.getItemsByUser(user_id).then((items) => {
     const templateVars = {
-      items: items,
+      items,
+      user_id,
     };
     res.render("my-items", templateVars);
   });
 });
 
 router.get("/new", (req, res) => {
-<<<<<<< HEAD
-
-=======
->>>>>>> feature/messages
   res.render("create-item");
 });
 

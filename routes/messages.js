@@ -5,16 +5,16 @@ const messageQuery = require("../db/messages-query");
 const itemQuery = require("../db/item-query");
 const newMessage = require("../db/add_message-query");
 
-router.get("/:itemID/:user1ID/:user2ID", (req, res) => {
+router.get("/:itemID/:user2ID", (req, res) => {
   const itemID = req.params.itemID;
-  const user1ID = req.params.user1ID;
+  const user_id = req.session.user_id;
   const user2ID = req.params.user2ID;
 
   messageQuery
-    .getMessageHistory(itemID, user1ID, user2ID)
+    .getMessageHistory(itemID, user_id, user2ID)
     .then((conversation) => {
       itemQuery.getItemById(itemID).then((item) => {
-        const templateVars = { conversation, user1ID, item };
+        const templateVars = { conversation, user_id, item };
         console.log(templateVars);
         res.render("messages", templateVars);
       });

@@ -39,12 +39,12 @@
     </div>
     <div class="message-container">
       <div class="message-title">
-        <p><%= item.name %></p>
+        <p><%= item.itemname %></p>
         <p>Price: <%= item.price_in_cents %></p>
       </div>
       <div class="message-history">
         <% for (let message of conversation) { %>
-          <% if(message.sender_id == user1ID) { %>
+          <% if(message.sender_id == user_id) { %>
             <div class="message-text sender">
               <p> <%= message.message %></p>
               <p> <%= message.send_time %> </p>
