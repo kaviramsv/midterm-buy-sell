@@ -13,6 +13,8 @@ const delFav = require("../db/del-favourite-items");
 
 router.post("/:items_id/:user_id/:is_fav", (req, res) => {
   const user_id = req.params.user_id;
+
+
   const items_id = req.params.items_id;
   const is_fav = req.params.is_fav;
  console.log("is_fav",typeof(is_fav));
@@ -23,13 +25,13 @@ router.post("/:items_id/:user_id/:is_fav", (req, res) => {
   addFav.addFavouriteItems(items_id,user_id)
   .then((items) => {
      console.log("in add fav",items);
-    res.redirect(`/featured/${user_id}`);
+    res.redirect(`/featured`);
   });
 }else{
   delFav.delFavouriteItems(items_id,user_id)
   .then((items) => {
      console.log("in del fav",items);
-    res.redirect(`/featured/${user_id}`);
+    res.redirect(`/featured`);
   });
 }
 });

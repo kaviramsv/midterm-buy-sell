@@ -29,21 +29,21 @@
   <% for(let item of items) { %>
     <section class="item-card">
       <div class = icon-section>
-        <button class="icon-button">
-          <i class="fas fa-star fa-lg item-icons"></i>
-        </button>
+        <form action="" method="post">
+          <button class="icon-button"><i class="fas fa-star fa-lg item-icons"></i></button>
+        </form>
       </div>
       <div class= container>
         <div class="image-section">
           <img class="item-image" src= "<%= item.image_url %>" alt="">
         </div>
         <div class="item-content">
-          <h2 class="item-name"><%= item.name %></h2>
-          <h3 class="item-price"><%= item.price_in_cents %></h3>
-          <div class="item-description">
-            <p>Description: </p>
-            <p><%= item.description %></p>
-          </div>
+          <h2 class="item-name"><%= item.name %></h2><br>
+          <h3 class="item-price"> $ <%= item.price_in_cents/100 %></h3><br>
+          <!-- <div class="item-description"> -->
+            <!-- <p>Description: </p> -->
+            <h4>Description :<%= item.description %></h4>
+          <!-- </div> -->
         </div>
       </div>
     </section>

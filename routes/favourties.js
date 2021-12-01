@@ -5,10 +5,10 @@ const router = express.Router();
 //Call item-query.js to use functions
 const itemsFnc = require("../db/item-query");
 
-router.get("/:id", (req, res) => {
+router.get("/", (req, res) => {
   const user_id = req.session.user_id;
   itemsFnc
-    .getFavItemsByUser(req.params.id)
+    .getFavItemsByUser(user_id)
     .then((items) => {
       const templateVars = {
         items,

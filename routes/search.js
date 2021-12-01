@@ -11,8 +11,8 @@ router.post("/:id", (req, res) => {
   const user_id = req.params.id;
 
 //if optionvalue==none(category_id=4)
-  if(category_id==4){
-    res.redirect(`/featured/${user_id}`);
+  if(category_id==4 && !max && !min){
+    res.redirect(`/featured`);
   }
 
    console.log("search",search)

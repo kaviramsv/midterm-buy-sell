@@ -4,18 +4,18 @@ const router = express.Router();
 const getItems = require("../db/get-featured-items");
 const getFav = require("../db/get_favourite");
 
-router.get("/:id", (req, res) => {
+router.get("/", (req, res) => {
 
-  const user = req.session.user_id;
-  console.log("featured,",user)
-  const user_id = req.params.id;
+  const user_id = req.session.user_id;
+  console.log("featured,",user_id);
+  // const user_id = req.params.id;
 
 
   //items for user except his own id
   getFav.getFavItems(user_id)
   .then((fav_items)=>{
       const fav= fav_items;
-    getItems.getFeaturedItems(req.params.id)
+    getItems.getFeaturedItems(user_id )
 
     .then((items) => {
       console.log("fav",fav);

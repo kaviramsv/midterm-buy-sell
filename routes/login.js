@@ -14,7 +14,7 @@ router.post("/", (req, res) => {
   userFnc.getUser(form_email).then((user) => {
 
   req.session.user_id = user.id;
-  res.redirect(`/featured/${user.id}`);
+  res.redirect(`/featured`);
   }).catch(err => {
     res
       .status(500)
