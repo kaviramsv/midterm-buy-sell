@@ -60,18 +60,12 @@
         <% } %>
       </div>
       <div class="message-form">
-        <form class="message-box" action="/messages/new" method="post" id="messageForm">
-          <input type = "hidden" name="item_id" id="item_id" value = <%= item.item_id %> ></input>
-          <input type = "hidden" name="reciever_id" id="reciever_id" value = <%= item.reciever_id %> ></input>
-
-          <label for="message"><b>Message Me Here!</b></label>
-          <div>
-            <textarea class="text-area" name="message" id="message"></textarea>
-          </div>
-          <div>
-            <button class="btn btn-danger" type="submit" id="btnSend"><strong>Send Message</strong></button>
-          </div>
+        <form action="/messages/new" method="POST" >
+          <textarea name="message" placeholder="Type Message Here" id="message-body" cols="50" rows="2"></textarea>
         </form>
+        <div>
+          <button class="btn btn-primary" type="submit">Send</button>
+        </div>
       </div>
     </div>
   </section>

@@ -52,8 +52,8 @@
            </div>
            <div class="right">
             <br>
-            <h4><%= items[item].name %></h4>
-            <h5>Price:  $<%= items[item].price_in_cents/100 %>.00</h5>
+            <h2><%= items[item].name %></h2>
+            <h4>Price:  $<%= items[item].price_in_cents/100 %>.00</h4>
             <br>
             <br>
 
@@ -62,18 +62,20 @@
 
                   <form action="/fav/<%=items[item].id%>/<%=user_id%>/true" method="POST">
                   <span>
-                  <button type="button" class="btn btn-danger btn-lg">  View  </button>
+                  <!-- <button type="button" class="btn btn-danger btn-lg">  View  </button> -->
                   <button type="submit" id="star"> <i  class="fa fa-star fa-lg" style="color: yellow;" aria-hidden="true"></i></button>
-                </span>
+                <!-- </span> -->
                   <% }else{ %>
 
                   <form action="/fav/<%=items[item].id%>/<%=user_id%>/false" method="POST">
                   <span>
-                  <button type="button" class="btn btn-danger btn-lg">  View  </button>
+                  <!-- <button type="button" class="btn btn-danger btn-lg">  View  </button> -->
                   <button type="submit" id="star"> <i  class="fa fa-star fa-lg" aria-hidden="true"></i></button>
-                  </span>
+                  <!-- </span> -->
                 <% } %>
 
+                <a class="btn btn-primary btn-lg" style="margin-left: 3rem;" href="/items/<%=items[item].id%>" role="button">View </a>
+              </span>
                  </form>
           </div>
           <div class="sold">
