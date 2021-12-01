@@ -29,7 +29,7 @@
   <% for(let item of items) { %>
     <section class="item-card">
       <div class = icon-section>
-        <form action="" method="post">
+        <form action="/favourites/delete/<%=item.id%>" method="POST">
           <button class="icon-button"><i class="fas fa-star fa-lg item-icons"></i></button>
         </form>
       </div>
@@ -38,6 +38,7 @@
           <img class="item-image" src= "<%= item.image_url %>" alt="">
         </div>
         <div class="item-content">
+
           <h2 class="item-name"><%= item.name %></h2><br>
           <h3 class="item-price"> $ <%= item.price_in_cents/100 %></h3><br>
           <!-- <div class="item-description"> -->
