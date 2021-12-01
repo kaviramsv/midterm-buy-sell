@@ -39,18 +39,23 @@
     </div>
     <div class="message-container">
       <div class="message-title">
-        <p>LEGO STAR WARS: TIE FIGHTER</p>
-        <p>item name: Bob</p>
+        <p><%= item.itemname %></p>
+        <p>Price: <%= item.price_in_cents %></p>
       </div>
       <div class="message-history">
-        <div class="message-text sender">
-          <p>hi im interested in the product</p>
-          <p>Sent at: 2021-11-29 8:50pm </p>
-        </div>
-        <div class="message-text recipient">
-          <p>hello is the listed price at 50 okay?</p>
-          <p>Sent at: 2021-11-29 9:50pm </p>
-        </div>
+        <% for (let message of conversation) { %>
+          <% if(message.sender_id == user_id) { %>
+            <div class="message-text sender">
+              <p> <%= message.message %></p>
+              <p> <%= message.send_time %> </p>
+            </div>
+          <% } else { %>
+            <div class="message-text recipient">
+              <p> <%= message.message %></p>
+              <p> <%= message.send_time %> </p>
+            </div>
+          <% } %>
+        <% } %>
       </div>
       <div class="message-form">
         <form action="">

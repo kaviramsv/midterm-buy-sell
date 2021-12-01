@@ -27,7 +27,7 @@
       <img class="image" src="<%= item.image_url %>" style="width:100%">
     </div>
     <div class="item-details">
-      <h1><%= item.name %></h1>
+      <h1><%= item.item_name %></h1>
     <p class="price">Price: <%= item.price_in_cents %></p>
     <p>Description: <%= item.description %></p>
     <p><%= item.category_name %></p>
@@ -38,6 +38,9 @@
   </div>
 
   <form class="message-box" action="/messages/new" method="post" id="messageForm">
+    <input type = "hidden" name="item_id" id="item_id" value = <%= item.item_id %> ></input>
+    <input type = "hidden" name="reciever_id" id="reciever_id" value = <%= item.reciever_id %> ></input>
+
     <label for="message"><b>Message Me Here!</b></label>
     <div>
       <textarea class="text-area" name="message" id="message"></textarea>
