@@ -33,6 +33,7 @@ const messagesRoutes = require("./routes/messages");
 const addtoFavouritesRoutes = require("./routes/fav");
 const searchItemsRoutes = require("./routes/search");
 const logoutRoutes = require("./routes/logout");
+const account_info =require("./routes/account_info");
 // Mount all resource routes
 app.use("/items", itemsRoutes);
 app.use("/login", loginRoutes);
@@ -42,6 +43,7 @@ app.use("/messages", messagesRoutes);
 app.use("/fav",addtoFavouritesRoutes);
 app.use("/search",searchItemsRoutes);
 app.use("/logout", logoutRoutes);
+app.use("/account",account_info);
 //get and post for login
 // route: /login
 
