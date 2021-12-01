@@ -88,10 +88,7 @@ router.post("/new", (req, res) => {
   newMessage
     .addMessage(sender_id, item_id, reciever_id, message)
     .then((res) => {
-      const templateVars = {
-        message,
-      };
-      console.log(templateVars);
+      console.log(res.rows);
     });
   res.redirect(`/messages/${item_id}/${reciever_id}`);
 });

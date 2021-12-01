@@ -46,7 +46,7 @@ const getItemById = (id) => {
   return connectionToDB
     .query(
       `
-  SELECT items.name AS itemname, price_in_cents, users.name
+  SELECT items.id, items.name AS itemname, price_in_cents, users.name, users.id AS recipient_id
   FROM items
   JOIN users ON users.id = owner_id
   WHERE items.id = $1;
