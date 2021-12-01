@@ -5,6 +5,16 @@ const messageQuery = require("../db/messages-query");
 const itemQuery = require("../db/item-query");
 const newMessage = require("../db/add_message-query");
 
+router.get("/", (req, res) => {
+  const user_id = req.session.user_id;
+  const templateVars = {
+    user_id,
+    conversation: [],
+    item: [],
+  };
+  res.render("messages", templateVars);
+});
+
 router.get("/:itemID/:user2ID", (req, res) => {
   const itemID = req.params.itemID;
   const user_id = req.session.user_id;
@@ -31,11 +41,8 @@ router.post("/new", (req, res) => {
   newMessage
     .addMessage(sender_id, item_id, reciever_id, message)
     .then((res) => {
-      // console.log("reciever id", reciever_id);
-      //console.log("sender id", sender_id);
-
       const templateVars = {
-        message: message,
+        message,
       };
       console.log(templateVars);
     });
