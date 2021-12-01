@@ -1,32 +1,33 @@
 <header>
   <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-secondary py-3">
 
-    <a class="navbar-brand" ><button type="button" class="btn btn-danger"><i class="fas fa-snowman"></i>
+    <a class="navbar-brand" ><button type="button" class="btn btn-danger btn-lg"><i class="fas fa-snowman"></i>
       <strong>Toy Box</strong></button></a>
     <a class="navbar-brand" href="#">Toy Box</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <ul class="navbar-nav ml-auto">
-
-      </ul>
 
       <ul class="navbar-nav ml-auto">
-        <a class="nav-item nav-link" href=""><i class="fa fa-home "></i><b> Home</b></a>
+
+        <% if(user_id){ %>
+
+
+        <a class="nav-item nav-link" href="/featured/<%=user_id%>"><i class="fa fa-home "></i><b> Home</b></a>
         <a class="nav-item nav-link" href=""><i class="fa fa-address-card"></i><b> Account</b></a>
         <a class="nav-item nav-link" href=""><b> Create </b> </a>
         <a class="nav-item nav-link" href=""><b> My Listings </b></a>
-        <a class="nav-item nav-link" href=""><i class="fa fa-star" aria-hidden="true"></i><b> Favourite </b> </a>
+        <a class="nav-item nav-link" href="/favourites/<%=user_id%>"><i class="fa fa-star" aria-hidden="true"></i><b> Favourite </b> </a>
         <a class="nav-item nav-link" href=""><i class="fas fa-envelope"></i><b> Messages</b> </a>
-          <!-- <form class="d-flex" method="POST" action="/logout"> -->
+         <form class="d-flex" method="POST" action="/logout">
             <span  class="navbar-text " style="margin-right: 2em;margin-left: 2em;color: white;">
 
-              Hi user
+              Hi
             </span>
-            <button type="submit" class="btn btn-outline-dark "> Logout </button>
-          <!-- </form> -->
-
+            <button type="submit" class="btn btn-light"> Logout </button>
+        </form>
+        <% }%>
       </ul>
     </div>
   </nav>

@@ -25,6 +25,10 @@ router.post("/:id", (req, res) => {
       for(let obj of fav){
         fav_arr.push(obj.item_id);
       }
+      if(items.length===0){
+        res.send("<h2>no match found</h2>");
+      }
+
       const templateVars = {user_id:user_id, items: items,fav_arr:fav_arr};
       res.render("featured",templateVars);
      })

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const userFnc = require("../db/get-user");
 const getItems = require("../db/get-featured-items");
-const cookieSession = require('cookie-session');
+
 router.get("/", (req, res) => {
 
   res.render("login.ejs");

@@ -6,11 +6,13 @@ const router = express.Router();
 const itemsFnc = require("../db/item-query");
 
 router.get("/:id", (req, res) => {
+  const user_id = req.session.user_id;
   itemsFnc
     .getFavItemsByUser(req.params.id)
     .then((items) => {
       const templateVars = {
-        items: items,
+        items,
+        user_id,
       };
       res.render("favourites", templateVars);
     })

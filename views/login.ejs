@@ -20,9 +20,22 @@
 
 <body>
 
-  <%- include('partials/_header') %>
+  <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-secondary py-3">
 
-  <h1 style="color:grey;margin-left: 1.5em; margin-top:1em">Login</h1>
+    <a class="navbar-brand" ><button type="button" class="btn btn-danger"><i class="fas fa-snowman"></i>
+      <strong>Toy Box</strong></button></a>
+    <a class="navbar-brand" href="#">Toy Box</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    </div>
+    </nav>
+
+  </header>
+
+
+  <h1 style="color:grey;margin-left: 1.5em; margin-top:3em">Login</h1>
 
   <form method="POST" action="/login" >
     <div class="form-group" >
@@ -33,7 +46,7 @@
       <label for="Password1" style="width: 300px  ;margin-left: 3.5em; margin-top:.1em ;">Password</label>
       <input type="password" name="password" class="form-control" id="Password1" placeholder="Password" style="width: 300px;margin-left: 3.5em; margin-top:.1em ;">
     </div>
-    <button type="submit" class="btn btn-primary" style="margin-left:3.4em; margin-top:1.2em;" >  Login  </button>
+    <button type="submit" class="btn btn-outline-danger " style="margin-left:3.5em; margin-top:1.2em;" >  Login  </button>
   </form>
 
 
