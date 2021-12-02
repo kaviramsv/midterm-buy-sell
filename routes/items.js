@@ -36,7 +36,43 @@ router.post("/new", (req, res) => {
   const price_in_cents = req.body.price;
   const image_url = req.body.image_url;
 
-  createNewItem.newItem(owner_id, category_id, toy_name, description, price_in_cents, image_url).then((res) => {
+  createNewItem.newItem(owner_id, category_id, toy_name, description, price_in_cents, image_url).then((items) => {
+    const templateVars = {
+      item: items,
+    };
+    console.log("KB--------------BEGIN", templateVars);
+    //res.render("items_show", templateVars);
+  });
+  res.redirect("/items/admin");
+});
+
+router.get("/edit/:id", (req, res) => {
+  const user_id = req.session.user_id;
+  const id = req.params.id;
+
+  createNewItem.editItem(id).then((items) => {
+    const templateVars = {
+      item: items[0],
+      user_id,
+    };
+      console.log(" tatto begin", templateVars, "tatto-end");
+    res.render("create-item", templateVars);
+  });
+
+
+  //res.render("create-item", templateVars);
+});
+
+router.post("/update", (req, res) => {
+  const id = req.body.id;
+  const owner_id = req.session.user_id //get id from session;
+  const category_id = req.body.category_id; //req.body.category_id;
+  const toy_name = req.body.toy_name;
+  const description = req.body.description;
+  const price_in_cents = req.body.price;
+  const image_url = req.body.image_url;
+console.log("update values", owner_id, category_id, toy_name, description, price_in_cents, image_url, id);
+  createNewItem.updateItem(owner_id, category_id, toy_name, description, price_in_cents, image_url, id).then((items) => {
     const templateVars = {
       item: items,
     };

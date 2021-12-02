@@ -1,0 +1,33 @@
+.alert {
+  padding: 20px;
+  color: #D8000C;
+  background-color: #FFBABA;
+  border: 2px solid;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+  display: none;
+  color: #D8000C;
+  background-image: url('https://i.imgur.com/GnyDvKN.png');
+  background-position: left;
+  text-align: center;
+}
+
+
+/* Close button on error message */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Close button color change on hover */
+.closebtn:hover {
+  color: black;
+}

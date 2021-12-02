@@ -9,7 +9,7 @@ const getAllItems = () => {
 const getItemsByUser = (id) => {
   return connectionToDB
     .query(
-      `SELECT image_url, items.name, price_in_cents, items.description
+      `SELECT items.id, items.image_url, items.name, price_in_cents, items.description
     FROM items
     JOIN users ON users.id = owner_id
     WHERE owner_id = $1;`,

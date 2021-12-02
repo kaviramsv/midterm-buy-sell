@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/create_items.css" type="text/css" />
   <link rel="stylesheet" href="/styles/view_items.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
@@ -24,30 +25,39 @@
 <body>
   <%- include('partials/_header') %>
 
+
   <div class='create-item-container'>
-    <form action="/items/new" method="post" id="create-item">
+    <form action="<% if (typeof item !== 'undefined' && item.id) { %>/items/update<% } else { %>/items/new <% } %>" method="post" id="create-item" onsubmit="return submitForm();">
+      <input type="hidden" name="id" id="id" value="<% if (typeof item !== 'undefined' && item.id) { %><%= item.id%><% } %>">
+      
+      <!-- Error message -->
+      <div class="alert" id="alert1">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <span id="errorMessage"></span>
+      </div>
+
       <div>
         <label for="toy-name"><b>Name</b></label>
-        <textarea class="text-area" name="toy_name" id="toy_name"></textarea>
+        <textarea class="text-area" name="toy_name" id="toy_name"><% if (typeof item !== 'undefined' && item.name) { %><%= item.name%><% } %></textarea>
       </div>
       <div>
         <label for="description"><b>Description</b></label>
-        <textarea class="text-area" name="description" id="description"></textarea>
+        <textarea class="text-area" name="description" id="description"><% if (typeof item !== 'undefined' && item.description) { %><%= item.description%><% } %></textarea>
       </div>
       <div>
         <label for="image-url"><b>image-url</b></label>
-        <textarea class="text-area" name="image_url" id="image_url"></textarea>
+        <textarea class="text-area" name="image_url" id="image_url"><% if (typeof item !== 'undefined' && item.image_url) { %><%= item.image_url%><% } %></textarea>
       </div>
       <div>
         <label for="price"><b>Price</b></label>
-        <textarea class="text-area" name="price" id="price"></textarea>
+        <textarea class="text-area" name="price" id="price"><% if (typeof item !== 'undefined' && item.price_in_cents) { %><%= item.price_in_cents%><% } %></textarea>
       </div>
       <div >
         <label for="category"><strong>Select Category</strong></label>
         <select id="category_id" name="category_id">
-          <option value="1">Vehicles</option>
-          <option value="2">Stuffed</option>
-          <option value="3">Blocks</option>
+          <option value="1" <% if (typeof item !== 'undefined' && item.category_id === 1) { %>selected<% } %>>Vehicles</option>
+          <option value="2" <% if (typeof item !== 'undefined' && item.category_id === 2) { %>selected<% } %>>Stuffed</option>
+          <option value="3" <% if (typeof item !== 'undefined' && item.category_id === 3) { %>selected<% } %>>Blocks</option>
           </select>
       </div>
       <div>
@@ -57,7 +67,7 @@
     </form>
   </div>
 
-  
+
 
 </body>
 </html>
