@@ -1,5 +1,5 @@
 section.messages {
-  margin-top: 100px;
+  margin-top: 150px;
   display: flex;
   justify-content: space-between;
 }
@@ -36,6 +36,7 @@ section.messages {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .message-title {
