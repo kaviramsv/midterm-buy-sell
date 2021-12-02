@@ -20,7 +20,8 @@ const getMessageHistory = (itemId, user1Id, user2Id) => {
   return connectionToDB
     .query(
       `SELECT
-      *
+      *,
+      to_char(send_time, 'YYYY-MM-DD HH24:MI:SS') AS sendTime
       FROM messages
       WHERE item_id = $1 AND
       (sender_id = $2 or sender_id = $3) AND

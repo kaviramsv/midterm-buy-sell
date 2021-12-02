@@ -51,12 +51,12 @@
             <% if(message.sender_id == user_id) { %>
               <div class="message-text sender">
                 <p> <%= message.message %></p>
-                <p> <%= message.send_time %> </p>
+                <p> <%= message.sendtime %> </p>
               </div>
             <% } else { %>
               <div class="message-text recipient">
                 <p> <%= message.message %></p>
-                <p> <%= message.send_time %> </p>
+                <p> <%= message.sendtime %> </p>
               </div>
             <% } %>
           <% } %>
