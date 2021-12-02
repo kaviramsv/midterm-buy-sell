@@ -34,6 +34,8 @@ const addtoFavouritesRoutes = require("./routes/fav");
 const searchItemsRoutes = require("./routes/search");
 const logoutRoutes = require("./routes/logout");
 const account_info =require("./routes/account_info");
+const mylistingPostRoutes =require("./routes/mylisting_post");
+
 // Mount all resource routes
 app.use("/items", itemsRoutes);
 app.use("/login", loginRoutes);
@@ -44,6 +46,7 @@ app.use("/fav",addtoFavouritesRoutes);
 app.use("/search",searchItemsRoutes);
 app.use("/logout", logoutRoutes);
 app.use("/account",account_info);
+app.use("/mylisting",mylistingPostRoutes);
 //get and post for login
 // route: /login
 

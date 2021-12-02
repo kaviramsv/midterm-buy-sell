@@ -12,6 +12,7 @@ const createNewItem = require("../db/create-new-item")
 router.get("/admin", (req, res) => {
   const user_id = req.session.user_id;
   itemFnc.getItemsByUser(user_id).then((items) => {
+    console.log(items);
     const templateVars = {
       items,
       user_id,

@@ -29,12 +29,13 @@
   <% for(let item of items) { %>
     <section class="item-card">
       <div class = icon-section>
-        <button class="icon-button">
-          <i class="fas fa-edit fa-lg item-icons"></i>
-        </button>
-        <button class="icon-button">
-          <i class="fas fa-trash-alt fa-lg item-icons"></i>
-        </button>
+
+            <a class="icon-button" role="button" href="/mylisting/update/<%=item.id%>/<%=user_id%>"> <i class="fas fa-edit fa-lg item-icons"></i></a>
+           <p><%=user_id%></p>
+          <form action="/mylisting/delete/<%=item.id%>" method="POST">
+            <button class="icon-button"><i class="fas fa-trash-alt fa-lg item-icons"></i></button>
+        </form>
+
       </div>
       <div class= container>
         <div class="image-section">
