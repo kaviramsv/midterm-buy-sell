@@ -12,12 +12,12 @@ const submitForm = function() {
       setTimeout(function () { $("#alert1").slideUp(); }, 3000);
       return false;
     };
-    // if (!$("#image-url").val()) {
-    //   $("#errorMessage").html("Image URL is empty!");
-    //   $("#alert1").slideDown();
-    //   setTimeout(function () { $("#alert1").slideUp(); }, 3000);
-    //   return false;
-    // };
+    if (!$("#image_url").val()) {
+      $("#errorMessage").html("Image URL is empty!");
+      $("#alert1").slideDown();
+      setTimeout(function () { $("#alert1").slideUp(); }, 3000);
+      return false;
+    };
     if (!$("#price").val()) {
       $("#errorMessage").html("Price is required!");
       $("#alert1").slideDown();
