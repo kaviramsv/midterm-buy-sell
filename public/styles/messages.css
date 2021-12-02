@@ -5,25 +5,41 @@ section.messages {
 }
 
 .message-container {
-  background-color: lightgray;
+
+  background: rgb(66, 65, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(66, 65, 83, 1) 6%,
+    rgba(77, 88, 98, 1) 48%,
+    rgba(81, 97, 98, 1) 78%
+  );
+
   width: 70%;
   margin: 0 20px;
-  height: 900px;
+  height: 80vh;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 .inbox-container {
-  background-color: grey;
+
+  background: rgb(66, 65, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(66, 65, 83, 1) 6%,
+    rgba(77, 88, 98, 1) 48%,
+    rgba(81, 97, 98, 1) 78%
+  );
   width: 20%;
   margin: 0 auto;
   border-radius: 10px;
 }
 
 .item-details {
-  background-color: forestgreen;
+  background-color: whitesmoke;
   margin: 1em;
+  padding:1em;
   border-radius: 3px;
   display: flex;
   flex-direction: column;
@@ -31,7 +47,7 @@ section.messages {
 
 .message-history {
   background-color: white;
-  height: 70%;
+  height: 50%;
   margin: 0 35px;
   border-radius: 10px;
   display: flex;
@@ -45,8 +61,9 @@ section.messages {
   padding: 0 50px;
   border-radius: 5px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  color:whitesmoke;
 }
 
 .message-text {
