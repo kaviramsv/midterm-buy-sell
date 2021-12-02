@@ -17,7 +17,6 @@ body {
   border-radius: 25px;
   margin-bottom: 5rem;
   padding-right: 2rem;
-
 }
 
 /* icon secion */
@@ -60,15 +59,13 @@ body {
   margin-left: 20px;
   padding-left: 2rem;
 }
-.item-price {
-  /* text-align: right; */
-}
+
 /* sold section  */
 .sold-section {
   display: flex;
   justify-content: flex-end;
 }
-.sold{
-color:yellow;
-margin-right:2rem;
+.sold {
+  color: yellow;
+  margin-right: 2rem;
 }
