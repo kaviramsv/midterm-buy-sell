@@ -30,24 +30,24 @@
     <section class="item-card">
       <div class = icon-section>
         <form action="/favourites/delete/<%=item.id%>" method="POST">
-          <button style="margin-right:5rem ;"class="icon-button"><i class="fas fa-star fa-lg item-icons"></i></button>
+          <button style="margin-right:4rem ;"class="icon-button"><i class="fas fa-star fa-lg item-icons"></i></button>
         </form>
       </div>
       <div class= container>
-        <div class="image-section">
-          <img class="item-image" src= "<%= item.image_url %>" alt="">
+        <div class="image-section" style="width:40%">
+          <img class="item-image" style="width:100%;"src= "<%= item.image_url %>" alt="">
         </div>
         <div class="item-content">
 
           <h2 class="item-name"><%= item.name %></h2><br>
-          <h4 class="item-price"> $ <%= item.price_in_cents/100 %></h4><br>
+          <h4 class="item-price"> $ <%= (item.price_in_cents/100).toFixed(2) %></h4><br>
           <!-- <div class="item-description"> -->
             <!-- <p>Description: </p> -->
 
           <!-- </div> -->
           <span>
-          <h4><%= item.description %></h4>
-          <a class="btn btn-danger btn-lg" style="margin-left: 20rem;" href="/items/<%=item.id%>" role="button">View </a>
+          <h6><%= item.description %></h6>
+          <a class="btn btn-danger btn-lg" style="margin-right:3rem;" href="/items/<%=item.id%>" role="button">View </a>
         </span>
         </div>
       </div>
