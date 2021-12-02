@@ -1,6 +1,7 @@
 .sidenav {
   padding: 4rem;
   padding-right: 5rem;
+  padding-top:3rem;
   width: 20rem;
   height: 22rem;
   position: fixed;
@@ -8,8 +9,15 @@
   top: 10rem;
   right: 8rem;
   color: #f9f9f9;
-  background: #d9534f;
+  /* background: #d9534f; */
   border-radius: 25px;
+  background: rgb(66, 65, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(66, 65, 83, 1) 6%,
+    rgba(77, 88, 98, 1) 48%,
+    rgba(81, 97, 98, 1) 78%
+  );
 }
 
 .sidenav a {
@@ -95,4 +103,11 @@
   cursor: pointer;
   overflow: hidden;
   outline: none;
+}
+
+#categories{
+  margin-bottom: 1rem;
+}
+body {
+  background-color:#FFFD95;
 }

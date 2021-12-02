@@ -26,7 +26,13 @@
 }
 
 .image-item-container {
-
+  background: rgb(66, 65, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(66, 65, 83, 1) 6%,
+    rgba(77, 88, 98, 1) 48%,
+    rgba(81, 97, 98, 1) 78%
+  );
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -34,7 +40,7 @@
   align-items: center;
   border: 2px solid rgb(10, 10, 10);
   border-radius: 25px;
-  background: #434440b6;
+
   width: 75rem;
   margin-left: 10rem;
   margin-top: 10rem;
@@ -57,7 +63,14 @@
   align-items: center;
   border: 2px solid rgb(10, 10, 10);
   border-radius: 25px;
-  background: #434440b6;
+
+  background: rgb(66, 65, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(66, 65, 83, 1) 6%,
+    rgba(77, 88, 98, 1) 48%,
+    rgba(81, 97, 98, 1) 78%
+  );
   width: 75rem;
   color: whitesmoke;
   padding-top: 1rem;
@@ -67,9 +80,11 @@
   margin-right: 15rem;
   margin-bottom: 5rem;
   flex-grow: 3;
+  height:60%;
 }
 
 .create-item-container {
+
   background: rgb(66, 65, 83);
   background: linear-gradient(
     90deg,
@@ -87,11 +102,14 @@
   /* background: #434440b6; */
   color:white;
   width: 75rem;
-  height: 20rem;
-  margin-left: 10rem;
+  height: 30rem;
+  /* margin-left: 10rem;
   margin-top: 10rem;
   margin-right: 15rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; */
+  margin:auto;
+  margin-top:10rem;
+  line-height: 3;
 }
 
 .form-field {
@@ -129,4 +147,27 @@ select {
 
 .button:hover {
   background-color: #abc257;
+}
+
+.text-area{
+  margin-left:6rem;
+  padding-bottom: 2rem;
+}
+#toy_name{
+  margin-left:5.7rem;
+}
+#description{
+  margin-left:3rem;
+}
+#image_url{
+  margin-left:4rem;
+}
+#category_id{
+margin-left:1rem;
+
+}
+
+#create-item{
+margin-right:1rem;
+
 }

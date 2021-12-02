@@ -44,7 +44,7 @@
         </div>
         <div class="item-content">
           <h2 class="item-name"><%= item.name %></h2>
-          <h3 class="item-price"><%= item.price_in_cents %></h3>
+          <h3 class="item-price">$ <%= (item.price_in_cents/100).toFixed(2)%></h3>
           <div class="item-description">
             <p>Description: </p>
             <p><%= item.description %></p>
@@ -57,7 +57,7 @@
             <button class="btn btn-danger" type="submit">Mark as Sold</button>
           </form>
         <% } else { %>
-          <h2 class="sold">SOLD</h2>
+          <h2 class="sold"><b>SOLD</b></h2>
         <% } %>
       </div>
     </section>

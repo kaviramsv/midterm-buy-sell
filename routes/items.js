@@ -34,7 +34,7 @@ router.post("/new", (req, res) => {
   const category_id = req.body.category_id; //req.body.category_id;
   const toy_name = req.body.toy_name;
   const description = req.body.description;
-  const price_in_cents = req.body.price;
+  const price_in_cents = req.body.price*100;
   const image_url = req.body.image_url;
 
   createNewItem.newItem(owner_id, category_id, toy_name, description, price_in_cents, image_url).then((items) => {
@@ -70,7 +70,7 @@ router.post("/update", (req, res) => {
   const category_id = req.body.category_id; //req.body.category_id;
   const toy_name = req.body.toy_name;
   const description = req.body.description;
-  const price_in_cents = req.body.price;
+  const price_in_cents = req.body.price*100;
   const image_url = req.body.image_url;
 console.log("update values", owner_id, category_id, toy_name, description, price_in_cents, image_url, id);
   createNewItem.updateItem(owner_id, category_id, toy_name, description, price_in_cents, image_url, id).then((items) => {
