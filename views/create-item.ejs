@@ -50,7 +50,7 @@
       </div>
       <div>
         <label for="price"><b>Price</b></label>
-        <textarea class="text-area" name="price" id="price"><% if (typeof item !== 'undefined' && item.price_in_cents) { %><%= item.price_in_cents%><% } %></textarea>
+        <textarea class="text-area" name="price" id="price"><% if (typeof item !== 'undefined' && item.price_in_cents) { %><%= (item.price_in_cents/100).toFixed(2)%><% } %></textarea>
       </div>
       <div >
         <label for="category"><strong>Select Category</strong></label>
