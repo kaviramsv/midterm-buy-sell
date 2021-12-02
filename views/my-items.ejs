@@ -50,7 +50,13 @@
         </div>
       </div>
       <div class="sold-section">
-        <button class="btn btn-danger">Mark as Sold</button>
+        <% if(!item.is_sold) { %>
+          <form action="/mylisting/sold/<%= item.id %>" method="post">
+            <button class="btn btn-danger" type="submit">Mark as Sold</button>
+          </form>
+        <% } else { %>
+          <h2 class="sold">SOLD</h2>
+        <% } %>
       </div>
     </section>
   <% } %>
