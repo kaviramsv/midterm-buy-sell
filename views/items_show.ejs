@@ -28,7 +28,7 @@
     </div>
     <div class="item-details">
       <h1><%= item.item_name %></h1>
-    <p class="price">Price: <%= item.price_in_cents %></p>
+    <p class="price">Price: $<%= item.price_in_cents/100 %></p>
     <p>Description: <%= item.description %></p>
     <p><%= item.category_name %></p>
     <p><%= item.owner_name %></p>

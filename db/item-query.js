@@ -1,3 +1,4 @@
+const { RowDescriptionMessage } = require("pg-protocol/dist/messages");
 const connectionToDB = require("./connection");
 
 const getAllItems = () => {
@@ -9,7 +10,7 @@ const getAllItems = () => {
 const getItemsByUser = (id) => {
   return connectionToDB
     .query(
-      `SELECT items.id, items.image_url, items.name, price_in_cents, items.description
+      `SELECT items.id,image_url, items.name, price_in_cents, items.description, is_sold
     FROM items
     JOIN users ON users.id = owner_id
     WHERE owner_id = $1;`,
@@ -46,7 +47,7 @@ const getItemById = (id) => {
   return connectionToDB
     .query(
       `
-  SELECT items.name AS itemname, price_in_cents, users.name
+  SELECT items.id, items.name AS itemname, price_in_cents, users.name, users.id AS recipient_id
   FROM items
   JOIN users ON users.id = owner_id
   WHERE items.id = $1;
@@ -58,9 +59,18 @@ const getItemById = (id) => {
     });
 };
 
+const markAsSold = (item_id) => {
+  return connectionToDB
+    .query(`UPDATE items SET is_sold = true WHERE items.id = $1;`, [item_id])
+    .then((res) => {
+      return res.rows[0];
+    });
+};
+
 module.exports = {
   getAllItems,
   getItemsByUser,
   getFavItemsByUser,
   getItemById,
+  markAsSold,
 };

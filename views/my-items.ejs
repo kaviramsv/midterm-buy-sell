@@ -35,6 +35,12 @@
         <button class="icon-button">
           <i class="fas fa-trash-alt fa-lg item-icons"></i>
         </button>
+
+            <!-- <a class="icon-button" role="button" href="/mylisting/update/<%=item.id%>/<%=user_id%>"> <i class="fas fa-edit fa-lg item-icons"></i></a> -->
+          <form action="/mylisting/delete/<%=item.id%>" method="POST">
+            <button class="icon-button"><i class="fas fa-trash-alt fa-lg item-icons"></i></button>
+        </form>
+
       </div>
       <div class= container>
         <div class="image-section">
@@ -50,7 +56,13 @@
         </div>
       </div>
       <div class="sold-section">
-        <button class="btn btn-danger">Mark as Sold</button>
+        <% if(!item.is_sold) { %>
+          <form action="/mylisting/sold/<%= item.id %>" method="post">
+            <button class="btn btn-danger" type="submit">Mark as Sold</button>
+          </form>
+        <% } else { %>
+          <h2 class="sold">SOLD</h2>
+        <% } %>
       </div>
     </section>
   <% } %>

@@ -2,11 +2,11 @@ body {
   padding-top: 10rem;
 }
 .item-card {
-  padding:1rem;
+  padding: 1rem;
   margin-top: 25rem;
   height: 22rem;
   margin: 25px auto;
-  width: 50%;
+  /* width: 50%; */
   background: rgb(66, 65, 83);
   background: linear-gradient(
     90deg,
@@ -33,7 +33,7 @@ body {
 }
 
 .item-icons.fas {
-  color:yellow;
+  color: yellow;
 }
 .icon-section .icon-button i:hover {
   color: red;
