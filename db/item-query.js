@@ -13,7 +13,8 @@ const getItemsByUser = (id) => {
       `SELECT items.id,image_url, items.name, price_in_cents, items.description, is_sold
     FROM items
     JOIN users ON users.id = owner_id
-    WHERE owner_id = $1;`,
+    WHERE owner_id = $1
+    ORDER BY time_stamp DESC;`,
       [id]
     )
     .then((res) => {
