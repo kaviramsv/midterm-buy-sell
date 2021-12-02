@@ -5,7 +5,6 @@ section.messages {
 }
 
 .message-container {
-
   background: rgb(66, 65, 83);
   background: linear-gradient(
     90deg,
@@ -20,10 +19,9 @@ section.messages {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .inbox-container {
-
   background: rgb(66, 65, 83);
   background: linear-gradient(
     90deg,
@@ -39,15 +37,16 @@ section.messages {
 .item-details {
   background-color: whitesmoke;
   margin: 1em;
-  padding:1em;
+  padding: 1em;
   border-radius: 3px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .message-history {
   background-color: white;
-  height: 50%;
+  height: 65%;
   margin: 0 35px;
   border-radius: 10px;
   display: flex;
@@ -61,15 +60,18 @@ section.messages {
   padding: 0 50px;
   border-radius: 5px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color:whitesmoke;
+  flex-direction: column;
+  align-items: center;
+  color: whitesmoke;
 }
 
 .message-text {
   border-radius: 5px;
   margin: 20px 30px;
+  padding: 13px;
+  color: black;
 }
+
 .message-text.recipient {
   background-color: lightslategrey;
   margin-right: auto;
@@ -92,6 +94,7 @@ form {
   margin: 20px;
   border: none;
   width: 100%;
+  display: flex;
 }
 
 form textarea {
@@ -102,4 +105,13 @@ form textarea {
 }
 .send-button {
   margin-right: 25px;
+}
+
+#item-name-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+#item-name-price p {
+  padding: 0 20px;
 }

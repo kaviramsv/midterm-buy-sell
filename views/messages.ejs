@@ -32,18 +32,24 @@
 
       <% for (let item of itemInbox) { %>
         <div class="item-details">
-          <p><%= item.itemname %></p>
-          <p><%= item.price_in_cents %></p>
-          <p><%= item.name %></p>
-          <a href="/messages/<%= item.id %>/<%= item.recipient_id %>">View Conversation</a>
+          <div>
+            <p><%= item.itemname %></p>
+            <p>Price: $<%= (item.price_in_cents/100).toFixed(2) %></p>
+          </div>
+          <div>
+            <p><%= item.name %></p>
+            <a href="/messages/<%= item.id %>/<%= item.recipient_id %>">View Conversation</a>
+          </div>
         </div>
       <% } %>
     </div>
     <div class="message-container">
       <div class="message-title">
-        <p><%= item.itemname %></p>
+        <div id="item-name-price">
+          <p><%= item.itemname %></p>
+          <p>Price: $<%= (item.price_in_cents/100).toFixed(2) %></p>
+        </div>
         <p><%= item.name %></p>
-        <p><%= item.price_in_cents %></p>
       </div>
       <div class="message-history">
         <% if(conversation) { %>
@@ -66,8 +72,10 @@
         <form action="/messages/new" method="POST" >
           <input type="hidden" name="item_id" value="<%= item.id %>">
           <input type="hidden" name="reciever_id" value = <%= item.recipient_id %>>
-          <textarea name="message" placeholder="Type Message Here" id="message-body" rows="2"></textarea>
-          <button class="btn btn-primary" type="submit">Send</button>
+          <textarea name="message" placeholder="Type Message Here" id="message-body" rows="1"></textarea>
+          <div>
+            <button class="btn btn-primary" type="submit">Send</button>
+          </div>
         </form>
       </div>
     </div>
