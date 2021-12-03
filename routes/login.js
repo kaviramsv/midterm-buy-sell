@@ -4,7 +4,10 @@ const userFnc = require("../db/get-user");
 const getItems = require("../db/get-featured-items");
 
 router.get("/", (req, res) => {
-
+  const user_id =req.session.user_id;
+  if(user_id){
+    res.redirect(`/featured`);
+  }
   res.render("login.ejs");
 });
 

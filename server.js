@@ -85,7 +85,7 @@ app.use("/mylisting",mylistingPostRoutes);
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.redirect("/login");
 });
 
 app.listen(PORT, () => {
