@@ -126,7 +126,6 @@
 .price {
   width: 20rem;
   height: 2rem;
-  margin-left: 1rem;
   margin-right: 10rem;
   padding-right: 5rem;
 }
@@ -149,7 +148,7 @@ select {
   background-color: #abc257;
 }
 
-.text-area{
+.create-area{
   margin-left:6rem;
   padding-bottom: 2rem;
 }
