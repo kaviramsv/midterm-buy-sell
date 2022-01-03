@@ -13,7 +13,8 @@ ToyBox App
 1. post items, which can be seen by others
 2. remove items from the site
 3. mark items as SOLD!
-4. send a message via app on negotiations in buying the said item
+4. update existing items
+5. send a message via app on negotiations in buying the said item
 
 ## Project Setup
 
