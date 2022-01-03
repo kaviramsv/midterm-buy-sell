@@ -4,16 +4,16 @@ ToyBox App
  An app where you can list your used toys for sale. This lets buyers find the items they are looking for quickly, and easily contact sellers.
  
 ## Functionalities of the App
-1.users can login and have an account
-2.see featured items on a main feed
-3.users can filter items by price,
-4.users can favourite items to check up on them later
-5.users can send messages to the user that is listing the item
-Admins can:
-1.post items, which can be seen by others
-2.remove items from the site
-3.mark items as SOLD!
-4.send a message via app on negotiations in buying the said item
+1. users can login and have an account
+2. see featured items on a main feed
+3. users can filter items by price,
+4. users can favourite items to check up on them later
+5. users can send messages to the user that is listing the item
+   Admins can:
+1. post items, which can be seen by others
+2. remove items from the site
+3. mark items as SOLD!
+4. send a message via app on negotiations in buying the said item
 
 ## Project Setup
 
